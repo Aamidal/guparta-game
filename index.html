@@ -44,9 +44,20 @@
             }
             else {
                 responsePara.innerHTML = `No, that's not your name!
-                Here, let me show you how to use the text entry field.`
-                submitButton.innerHTML = "Try Again"
-                nameEntry.value = "pachei"
+                Here, let me show you how to use the text entry field.`;
+
+                nameEntry.value = ''
+                const nameHint = 'pachei';
+                submitButton.style.display = "none";
+                submitButton.innerHTML = "Try Again";
+
+                for (let i = 0; i < nameHint.length; i++) {
+                    setTimeout(() => {
+                        nameEntry.value += nameHint[i];
+                    }, i * 300);
+                }
+                setTimeout(() => {submitButton.style.display = "inline"}, 1800)
+                
             }
 
         }
