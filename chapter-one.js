@@ -33,7 +33,7 @@ function runNameTest() {
     let sceneButton = document.createElement('button');
     sceneButton.innerHTML = "Submit";
     sceneButton.id = 'submitName'
-    sceneButton.onclick = checkName;
+    sceneButton.addEventListener('click', checkName);
     choiceUI.appendChild(sceneButton);
 
     function checkName() {
@@ -65,7 +65,7 @@ function runNameTest() {
             nameEntry.remove();
             let nextScene = document.createElement("button");
             nextScene.innerHTML = "Examine your room";
-            nextScene.onclick = examineRoom;
+            nextScene.addEventListener('click', examineRoom);
             choiceUI.appendChild(nextScene), checkName = true;
         }
         else if (nameInput === "pachei") {
@@ -121,7 +121,7 @@ function examineRoom() {
     questionUI.appendChild(sceneQuestion);
     let sceneButton = document.createElement('button');
     sceneButton.innerHTML = "Consider your thoughts"
-    sceneButton.onclick = roomThink;
+    sceneButton.addEventListener('click', roomThink);
     choiceUI.appendChild(sceneButton);
 
     function roomThink() {
