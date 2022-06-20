@@ -44,11 +44,15 @@ function checkName() {
     nameEntry.value = ''
     submitButton.style.display = "none";
     submitButton.innerHTML = "Try Again";
-    setTimeout(() => {submitButton.style.display = "inline"}, 1800)
-    for (let i = 0; i < nameHint.length; i++) {
+    nameEntry.style.display = "none";
+    setTimeout(() => {submitButton.style.display = "inline"}, 1500);
+    setTimeout(() => {
+        nameEntry.style.display = "block";
+        for (let i = 0; i < nameHint.length; i++) {
             setTimeout(() => {
                 nameEntry.value += nameHint[i];
-            }, i * 300);
+            }, i * 200);
         }
+    }, 500)
     }
 }
