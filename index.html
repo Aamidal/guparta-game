@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guparta Station</title>
+    <link rel="stylesheet" src="styles.css">
 </head>
 <body>
-    <div id="game">
-        <p>You stand in your quarters on the 
+    <div id="gameScene">
+        <p>You stand in your quarters on the LRSS
         <span style="font-style: italic">Tranquil Cloud.</span> 
         You are a young woman and it is not your birthday.</p>
-
+    </div>
+    <div id="gameQuestion">
         <p>What is your name?</p> 
+    </div>
+    <div id="gameChoice">
         <p id="nameTestAnswer"></p>
         <p id="nameTestResponse"></p>
-        <input id="nameTest" placeholder="Name">
-        <button id="submitName" onclick="checkName()">Confirm</button>
+        <input id="nameTest" autocomplete="off" 
+        placeholder="Try writing your name">
+        <button id="submitName" onclick="checkName()">Submit</button>
     </div>
     <script src="nameTest.js"></script>
 </body>

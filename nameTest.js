@@ -1,5 +1,12 @@
-const Pachei = {characterName: "Pachei", inventory: [],}
+const Pachei = {characterName: "Pachei", inventory: [],};
 
+let chapterOneStage = 0;
+
+let chapterOne = [
+    {
+
+    }
+]
 
 function checkName() {
     let nameHint = Pachei.characterName
@@ -24,7 +31,7 @@ function checkName() {
         nameEntry.remove();
         let nextScene = document.createElement("button");
         nextScene.innerHTML = "Examine your room";
-        let gameSpace = document.getElementById("game");
+        let gameSpace = document.getElementById("gameChoice");
         gameSpace.appendChild(nextScene);
     }
     else if (nameInput === "pachei") {
