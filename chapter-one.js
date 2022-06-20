@@ -66,7 +66,7 @@ function runNameTest() {
             let nextScene = document.createElement("button");
             nextScene.innerHTML = "Examine your room";
             nextScene.onclick = examineRoom;
-            choiceUI.appendChild(nextScene), checkName = True;
+            choiceUI.appendChild(nextScene), checkName = true;
         }
         else if (nameInput === "pachei") {
             nameFail = false;
