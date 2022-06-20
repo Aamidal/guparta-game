@@ -1,5 +1,8 @@
+const Pachei = {characterName: "Pachei", inventory: [],}
+
+
 function checkName() {
-    let nameHint = 'Pachei'
+    let nameHint = Pachei.characterName
     let responsePara = document.getElementById("nameTestResponse");
     let answerPara = document.getElementById("nameTestAnswer");
     let submitButton = document.getElementById("submitName");
@@ -8,7 +11,7 @@ function checkName() {
     let nameFail = false;
 
     answerPara.innerHTML = `${nameInput}.`;
-    if (nameInput === "Pachei") {
+    if (nameInput === Pachei.characterName) {
         if (nameFail === false) {
             responsePara.innerHTML = "Yes, that is your name.";
         }
@@ -20,7 +23,7 @@ function checkName() {
         submitButton.remove();
         nameEntry.remove();
         let nextScene = document.createElement("button");
-        nextScene.innerHTML = "Examine your room.";
+        nextScene.innerHTML = "Examine your room";
         let gameSpace = document.getElementById("game");
         gameSpace.appendChild(nextScene);
     }
