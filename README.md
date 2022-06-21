@@ -1,4 +1,7 @@
 # guparta-game
+
+update: This is quickly becoming a mess of nested functions.
+
 A basic text adventure set in the Three Sisters.
 
 The aim is to mix simple RPG mechanics with the usual interactive fiction/choose your own adventure gameplay loop. 
