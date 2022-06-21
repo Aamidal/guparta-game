@@ -16,6 +16,12 @@ else {
     examineRoom();
 }
 
+function clearScene() {
+    sceneUI.innerHTML = '';
+    choiceUI.innerHTML = '';
+    questionUI.innerHTML = '';
+}
+
 function runNameTest() {
     let nameFail = false
     let sceneDesc = document.createElement("p");
@@ -104,9 +110,7 @@ function runNameTest() {
 }
 
 function examineRoom() {
-    sceneUI.innerHTML = '';
-    choiceUI.innerHTML = '';
-    questionUI.innerHTML = '';
+    clearScene();
     let sceneDesc = document.createElement('p');
     sceneDesc.innerHTML = `
     Your room is one of four private cabins on the ${yourShip}. It is a standard
