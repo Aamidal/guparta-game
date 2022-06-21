@@ -57,7 +57,7 @@ function runNameTest() {
         questionUI.appendChild(responsePara);
 
         answerPara.innerHTML = `${nameInput}`;
-        if (nameInput === 'Pachei') {
+        if (nameInput === Pachei.characterName) {
 
             if (nameFail === true) {
                 responsePara.innerHTML = `Well. You may not have remembered
@@ -71,7 +71,7 @@ function runNameTest() {
             }
 
         }
-        else if (nameInput === "pachei") {
+        else if (nameInput.toLowerCase() === Pachei.characterName.toLowerCase()) {
             if (nameCorrection === false) {
                 nameCorrection = true;
                 responsePara.innerHTML = `While that is technically correct, it 
