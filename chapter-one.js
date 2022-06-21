@@ -44,7 +44,7 @@ function runNameTest() {
     choiceUI.appendChild(sceneButton);
 
     function checkName() {
-        let nameHint = Pachei.characterName.toLowerCase
+        let nameHint = Pachei.characterName.toLowerCase()
         let responsePara = document.createElement("p");
         let answerPara = document.createElement("p");
         let submitButton = document.getElementById("submitName");
@@ -83,8 +83,8 @@ function runNameTest() {
             }
             else {
                 responsePara.innerHTML = `…Is it really necessary to play around
-                with something as important as your name? That's a way to get 
-                lost in the dreaming kingdoms, young lady.
+                with something as important as your name? That's a good way to get 
+                lost in the Dreaming Kingdoms, young lady.
                 <br><br>Let's try that again.`
 
                 nameEntry.value = ''
@@ -105,9 +105,41 @@ function runNameTest() {
             
         }
         // Edit between these lines!!! //
-        else if (nameInput.toLowerCase === 'mojgan') {
+        else if (nameInput.toLowerCase() === 'mojgan') {
             nameFail = true;
-            responsePara.innerHTML = `No. That is the name of your Hosalira.`
+            responsePara.innerHTML = `No, Mojgan is your Hosalira. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'tavalas') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Tavalas is your physician. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'nihn') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Nihn is your pilot and princess. Let me help you.`;
+            writeHint();
+        }
+
+
+        else if (nameInput.toLowerCase() === 'gunner') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Gunner is a good boy. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'bahareh') {
+            nameFail = true;
+            responsePara.innerHTML = `...You don't know anyone by that name. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'nazanin') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Nazanin is your former Hosalira. Let me help you.`;
+            writeHint();
         }
 
         // Edit between these lines!!!//
