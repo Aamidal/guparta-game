@@ -44,7 +44,7 @@ function runNameTest() {
     choiceUI.appendChild(sceneButton);
 
     function checkName() {
-        let nameHint = Pachei.characterName
+        let nameHint = Pachei.characterName.toLowerCase()
         let responsePara = document.createElement("p");
         let answerPara = document.createElement("p");
         let submitButton = document.getElementById("submitName");
@@ -71,6 +71,7 @@ function runNameTest() {
 
         }
         else if (nameInput.toLowerCase() === Pachei.characterName.toLowerCase()) {
+            nameHint = Pachei.characterName;
             if (nameCorrection === false) {
                 nameCorrection = true;
                 responsePara.innerHTML = `Hmph. While that is technically 
@@ -102,11 +103,50 @@ function runNameTest() {
             }
             
         }
+        // Edit between these lines!!! //
+        else if (nameInput.toLowerCase() === 'mojgan') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Mojgan is your Hosalira. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'tavalas') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Tavalas is your physician. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'nihn') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Nihn is your pilot and princess. Let me help you.`;
+            writeHint();
+        }
+
+
+        else if (nameInput.toLowerCase() === 'gunner') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Gunner is a good boy. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'bahareh') {
+            nameFail = true;
+            responsePara.innerHTML = `...You don't know anyone by that name. Let me help you.`;
+            writeHint();
+        }
+
+        else if (nameInput.toLowerCase() === 'nazanin') {
+            nameFail = true;
+            responsePara.innerHTML = `No, Nazanin is your former Hosalira. Let me help you.`;
+            writeHint();
+        }
+
+        // Edit between these lines!!!//
+
         else {
             nameFail = true;
             responsePara.innerHTML = `No, that's not your name!
             Here, let me show you how to use the text entry field.`;
-            nameHint = 'pachei';
             writeHint();
         }
 
