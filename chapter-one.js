@@ -74,17 +74,17 @@ function runNameTest() {
         else if (nameInput.toLowerCase() === Pachei.characterName.toLowerCase()) {
             if (nameCorrection === false) {
                 nameCorrection = true;
-                responsePara.innerHTML = `While that is technically correct, it 
-                suggests a certain young woman does not have an eye for detail or 
-                has not taken her grammar lessons to heart. 
-                <br> Let's try it like this.`
+                responsePara.innerHTML = `Hmph. While that is technically 
+                correct, it suggests a certain young woman does not have an eye 
+                for detail or has not taken her grammar lessons to heart. 
+                <br><br> Let's try it like this.`
                 writeHint();
             }
             else {
                 responsePara.innerHTML = `…Is it really necessary to play around
-                with something as integral as your name? Playing about like that
-                is a way to get lost in the dreaming kingdoms, young lady. <br>
-                Let's try that again.`
+                with something as important as your name? That's a way to get 
+                lost in the dreaming kingdoms, young lady.
+                <br><br>Let's try that again.`
 
                 nameEntry.value = ''
                 submitButton.style.display = "none";
