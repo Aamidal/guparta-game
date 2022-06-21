@@ -60,13 +60,12 @@ function runNameTest() {
         if (nameInput === Pachei.characterName) {
 
             if (nameFail === true) {
-                responsePara.innerHTML = `Well. You may not have remembered
-                your name immediately, but at least you have an eye for
-                detail.`;
+                responsePara.innerHTML = `Well, you may not have remembered
+                your name immediately, but at least you got there in the end.`;
                 nextScene();
 
             } else {
-                responsePara.innerHTML = 'Yes. That is your name.';
+                responsePara.innerHTML = 'Yes, you are Pachei.';
                 nextScene();
             }
 
@@ -82,8 +81,8 @@ function runNameTest() {
             }
             else {
                 responsePara.innerHTML = `…Is it really necessary to play around
-                with something as important as your name? That's a way to get 
-                lost in the dreaming kingdoms, young lady.
+                with something as important as your name? That's a good way to get 
+                lost in the Dreaming Kingdoms, young lady.
                 <br><br>Let's try that again.`
 
                 nameEntry.value = ''
