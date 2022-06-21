@@ -44,7 +44,7 @@ function runNameTest() {
     choiceUI.appendChild(sceneButton);
 
     function checkName() {
-        let nameHint = Pachei.characterName
+        let nameHint = Pachei.characterName.toLowerCase
         let responsePara = document.createElement("p");
         let answerPara = document.createElement("p");
         let submitButton = document.getElementById("submitName");
@@ -72,6 +72,7 @@ function runNameTest() {
 
         }
         else if (nameInput.toLowerCase() === Pachei.characterName.toLowerCase()) {
+            nameHint = Pachei.characterName;
             if (nameCorrection === false) {
                 nameCorrection = true;
                 responsePara.innerHTML = `Hmph. While that is technically 
@@ -103,11 +104,18 @@ function runNameTest() {
             }
             
         }
+        // Edit between these lines!!! //
+        else if (nameInput.toLowerCase === 'mojgan') {
+            nameFail = true;
+            responsePara.innerHTML = `No. That is the name of your Hosalira.`
+        }
+
+        // Edit between these lines!!!//
+
         else {
             nameFail = true;
             responsePara.innerHTML = `No, that's not your name!
             Here, let me show you how to use the text entry field.`;
-            nameHint = 'pachei';
             writeHint();
         }
 
