@@ -24,6 +24,7 @@ function clearScene() {
 
 function runNameTest() {
     let nameFail = false
+    let nameCorrection = false;
     let sceneDesc = document.createElement("p");
     sceneDesc.innerHTML = `You stand in your quarters on the ${yourShip}
     You are a young woman and it is not your birthday.`;
@@ -58,29 +59,49 @@ function runNameTest() {
         answerPara.innerHTML = `${nameInput}`;
         if (nameInput === 'Pachei') {
 
-            if (nameFail === false) {
-                responsePara.innerHTML = "Yes, that is your name.";
-            }
-            else {
+            if (nameFail === true) {
                 responsePara.innerHTML = `Well. You may not have remembered
                 your name immediately, but at least you have an eye for
                 detail.`;
+                nextScene();
+
+            } else {
+                responsePara.innerHTML = 'Yes. That is your name.';
+                nextScene();
             }
 
-            submitButton.remove();
-            nameEntry.remove();
-            let nextScene = document.createElement("button");
-            nextScene.innerHTML = "Examine your room";
-            nextScene.addEventListener('click', examineRoom);
-            choiceUI.appendChild(nextScene), checkName = true;
         }
         else if (nameInput === "pachei") {
-            nameFail = false;
-            responsePara.innerHTML = `While that is technically correct,
-            it suggests a certain young woman has not taken her grammar
-            lessons to heart.`
-            writeHint();
+            if (nameCorrection === false) {
+                nameCorrection = true;
+                responsePara.innerHTML = `While that is technically correct, it 
+                suggests a certain young woman does not have an eye for detail or 
+                has not taken her grammar lessons to heart. 
+                <br> Let's try it like this.`
+                writeHint();
+            }
+            else {
+                responsePara.innerHTML = `…Is it really necessary to play around
+                with something as integral as your name? Playing about like that
+                is a way to get lost in the dreaming kingdoms, young lady. <br>
+                Let's try that again.`
 
+                nameEntry.value = ''
+                submitButton.style.display = "none";
+                submitButton.innerHTML = "Try Again";
+                nameEntry.style.display = "none";
+                setTimeout(() => {submitButton.style.display = "inline"}, 1500);
+                setTimeout(() => {
+                    nameEntry.style.display = "block";
+                    nameEntry.disabled = true;
+                    for (let i = 0; i < nameHint.length; i++) {
+                        setTimeout(() => {
+                            nameEntry.value += nameHint[i];
+                        }, i * 200);
+                    }
+                }, 500)
+            }
+            
         }
         else {
             nameFail = true;
@@ -104,6 +125,15 @@ function runNameTest() {
                 }, i * 200);
             }
         }, 500)
+        }
+    
+        function nextScene() {
+            submitButton.remove();
+            nameEntry.remove();
+            let goToRoom = document.createElement("button");
+            goToRoom.innerHTML = "Examine your room";
+            goToRoom.addEventListener('click', examineRoom);
+            choiceUI.appendChild(goToRoom), checkName = true;
         }
     }
 
