@@ -1,0 +1,35 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game {
+    height: 50vh;
+    width: 80vw;
+    border: 10px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex: 0 1 0%;
+}
+
+#character, #journal {
+    width: 15vw;
+    padding: 10px;
+    border: 1px solid black;
+    flex: 1 1 0%;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+}
+
+#scene {
+    height: 30vh;
+    width: 50vw;
+    border-bottom: 1px solid black;
+}
