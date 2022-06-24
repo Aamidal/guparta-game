@@ -17,20 +17,20 @@ else {
 }
 
 function clearScene() {
-    sceneUI.innerHTML = '';
-    choiceUI.innerHTML = '';
-    questionUI.innerHTML = '';
+    sceneUI.textContent = '';
+    choiceUI.textContent = '';
+    questionUI.textContent = '';
 }
 
 function runNameTest() {
     let nameFail = false
     let nameCorrection = false;
     let sceneDesc = document.createElement("p");
-    sceneDesc.innerHTML = `You stand in your quarters on the ${yourShip}
+    sceneDesc.textContent = `You stand in your quarters on the ${yourShip}
     You are a young woman and it is not your birthday.`;
     sceneUI.appendChild(sceneDesc);
     let sceneQuestion = document.createElement('p');
-    sceneQuestion.innerHTML = 'What is your name?';
+    sceneQuestion.textContent = 'What is your name?';
     questionUI.appendChild(sceneQuestion);
     let scenePrompt = document.createElement('input');
     scenePrompt.placeholder = "Try writing your name";
@@ -38,7 +38,7 @@ function runNameTest() {
     scenePrompt.autocomplete = "off";
     choiceUI.appendChild(scenePrompt);
     let sceneButton = document.createElement('button');
-    sceneButton.innerHTML = "Submit";
+    sceneButton.textContent = "Submit";
     sceneButton.id = 'submitName'
     sceneButton.addEventListener('click', checkName);
     choiceUI.appendChild(sceneButton);
@@ -51,21 +51,21 @@ function runNameTest() {
         let nameEntry = document.getElementById("nameTest");
         let nameInput = document.getElementById("nameTest").value;;
 
-        answerPara.innerHTML = '';
-        responsePara.innerHTML= '';
+        answerPara.textContent = '';
+        responsePara.textContent= '';
         questionUI.appendChild(answerPara);
         questionUI.appendChild(responsePara);
 
-        answerPara.innerHTML = `${nameInput}`;
+        answerPara.textContent = `${nameInput}`;
         if (nameInput === Pachei.characterName) {
 
             if (nameFail === true) {
-                responsePara.innerHTML = `Well, you may not have remembered
+                responsePara.textContent = `Well, you may not have remembered
                 your name immediately, but at least you got there in the end.`;
                 nextScene();
 
             } else {
-                responsePara.innerHTML = 'Yes, you are Pachei.';
+                responsePara.textContent = 'Yes, you are Pachei.';
                 nextScene();
             }
 
@@ -74,21 +74,21 @@ function runNameTest() {
             nameHint = Pachei.characterName;
             if (nameCorrection === false) {
                 nameCorrection = true;
-                responsePara.innerHTML = `Hmph. While that is technically 
+                responsePara.textContent = `Hmph. While that is technically 
                 correct, it suggests a certain young woman does not have an eye 
                 for detail or has not taken her grammar lessons to heart. 
                 <br><br> Let's try it like this.`
                 writeHint();
             }
             else {
-                responsePara.innerHTML = `…Is it really necessary to play around
+                responsePara.textContent = `…Is it really necessary to play around
                 with something as important as your name? That's a good way to get 
                 lost in the Dreaming Kingdoms, young lady.
                 <br><br>Let's try that again.`
 
                 nameEntry.value = ''
                 submitButton.style.display = "none";
-                submitButton.innerHTML = "Try Again";
+                submitButton.textContent = "Try Again";
                 nameEntry.style.display = "none";
                 setTimeout(() => {submitButton.style.display = "inline"}, 1500);
                 setTimeout(() => {
@@ -106,38 +106,38 @@ function runNameTest() {
         // Edit between these lines!!! //
         else if (nameInput.toLowerCase() === 'mojgan') {
             nameFail = true;
-            responsePara.innerHTML = `No, Mojgan is your Hosalira. Let me help you.`;
+            responsePara.textContent = `No, Mojgan is your Hosalira. Let me help you.`;
             writeHint();
         }
 
         else if (nameInput.toLowerCase() === 'tavalas') {
             nameFail = true;
-            responsePara.innerHTML = `No, Tavalas is your physician. Let me help you.`;
+            responsePara.textContent = `No, Tavalas is your physician. Let me help you.`;
             writeHint();
         }
 
         else if (nameInput.toLowerCase() === 'nihn') {
             nameFail = true;
-            responsePara.innerHTML = `No, Nihn is your pilot and princess. Let me help you.`;
+            responsePara.textContent = `No, Nihn is your pilot and princess. Let me help you.`;
             writeHint();
         }
 
 
         else if (nameInput.toLowerCase() === 'gunner') {
             nameFail = true;
-            responsePara.innerHTML = `No, Gunner is a good boy. Let me help you.`;
+            responsePara.textContent = `No, Gunner is a good boy. Let me help you.`;
             writeHint();
         }
 
         else if (nameInput.toLowerCase() === 'bahareh') {
             nameFail = true;
-            responsePara.innerHTML = `...You don't know anyone by that name. Let me help you.`;
+            responsePara.textContent = `...You don't know anyone by that name. Let me help you.`;
             writeHint();
         }
 
         else if (nameInput.toLowerCase() === 'nazanin') {
             nameFail = true;
-            responsePara.innerHTML = `No, Nazanin is your former Hosalira. Let me help you.`;
+            responsePara.textContent = `No, Nazanin is your former Hosalira. Let me help you.`;
             writeHint();
         }
 
@@ -145,7 +145,7 @@ function runNameTest() {
 
         else {
             nameFail = true;
-            responsePara.innerHTML = `No, that's not your name!
+            responsePara.textContent = `No, that's not your name!
             Here, let me show you how to use the text entry field.`;
             writeHint();
         }
@@ -153,7 +153,7 @@ function runNameTest() {
         function writeHint() {
         nameEntry.value = ''
         submitButton.style.display = "none";
-        submitButton.innerHTML = "Try Again";
+        submitButton.textContent = "Try Again";
         nameEntry.style.display = "none";
         setTimeout(() => {submitButton.style.display = "inline"}, 1500);
         setTimeout(() => {
@@ -170,7 +170,7 @@ function runNameTest() {
             submitButton.remove();
             nameEntry.remove();
             let goToRoom = document.createElement("button");
-            goToRoom.innerHTML = "Examine your room";
+            goToRoom.textContent = "Examine your room";
             goToRoom.addEventListener('click', examineRoom);
             choiceUI.appendChild(goToRoom), checkName = true;
         }
@@ -181,7 +181,7 @@ function runNameTest() {
 function examineRoom() {
     clearScene();
     let sceneDesc = document.createElement('p');
-    sceneDesc.innerHTML = `
+    sceneDesc.textContent = `
     Your room is one of four private cabins on the ${yourShip}. It is a standard
     size stateroom for a Type-S scout. It is also the most square footage that's
     ever been yours, and most of the time you don't have to share it with
@@ -190,17 +190,17 @@ function examineRoom() {
     things your sometimes-roommate has left behind.`;
     sceneUI.appendChild(sceneDesc);
     let sceneQuestion = document.createElement('p');
-    sceneQuestion.innerHTML = "It is a good place to think.";
+    sceneQuestion.textContent = "It is a good place to think.";
     questionUI.appendChild(sceneQuestion);
     let sceneButton = document.createElement('button');
-    sceneButton.innerHTML = "Consider your thoughts"
+    sceneButton.textContent = "Consider your thoughts"
     sceneButton.addEventListener('click', roomThink);
     choiceUI.appendChild(sceneButton);
 
     function roomThink() {
-        choiceUI.innerHTML = 'You consider your thoughts.';
+        choiceUI.textContent = 'You consider your thoughts.';
         let answerPara = document.createElement('p');
-        answerPara.innerHTML = "There is a lot to think about.";
+        answerPara.textContent = "There is a lot to think about.";
         choiceUI.appendChild(answerPara);
     }
 }
