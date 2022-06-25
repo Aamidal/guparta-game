@@ -49,7 +49,7 @@ function runNameTest() {
         let answerPara = document.createElement("p");
         let submitButton = document.getElementById("submitName");
         let nameEntry = document.getElementById("nameTest");
-        let nameInput = document.getElementById("nameTest").value;;
+        let nameInput = document.getElementById("nameTest").value;
 
         answerPara.textContent = '';
         responsePara.textContent= '';
