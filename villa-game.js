@@ -34,7 +34,8 @@ const Locations = {
                             suggests a certain young woman does not have an eye 
                             for detail or has not taken her grammar lessons to 
                             heart.`,
-                    'sudanis jesrai': `No, she is your sister student.`,
+                    'sudanis': 'No, she is your sister student.',
+                    'jesrai': 'No, she is your sister student.',
                     'nazanin': 'No, she is your hosalira.',
                     'atena zareii': 'No, she is your deyzalira.',
                     'mhasrin': 'No, that is the Autarch, blessed be her name.',
@@ -50,7 +51,8 @@ const Locations = {
                 function checkName(answer) {
                     console.log(answer)
                     if (answer == "Pachei") {
-                        createText(correctName);
+                        replaceText(correctName);
+                        input.remove
                         name = answer
                     }
                     else if (answer.toLowerCase() in names) {
@@ -61,10 +63,11 @@ const Locations = {
                     }
                 }
 
-                if (name != Pachei.name) {
+                if (name != "Pachei") {
                     createInput("Try writing your name");
-                    let answer = document.querySelector("answer").value;
-                    createButton("Submit Name", () => checkName(answer));
+                    let answer = document.querySelector(".answer");
+                    console.log(answer.value);
+                    createButton("Submit Name", ()=>checkName(answer.value));
                 }
             }
         },
